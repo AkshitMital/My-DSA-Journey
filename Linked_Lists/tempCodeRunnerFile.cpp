@@ -1,0 +1,11 @@
+    // printNode(tail);
+    // InsertNode(tail,10,20);
+    // printNode(tail);
+    // InsertNode(tail,20,40);
+    // printNode(tail);
+    // InsertNode(tail,20,30);
+    // printNode(tail);
+    // InsertNode(tail,40,60);
+    // printNode(tail);
+    // InsertNode(tail,40,50);
+    // printNode(tail);
