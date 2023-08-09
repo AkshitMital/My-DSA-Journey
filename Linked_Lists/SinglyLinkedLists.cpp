@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node
@@ -103,6 +104,27 @@ void PrintHead(Node* &head)
         cout<<temp -> val<<" -> ";
         temp = temp -> next;
     }cout<<"NULL"<<endl;
+}
+
+bool detectLoop(Node* head)
+{
+    if (head == NULL){
+        return false;
+    }
+
+    map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while(temp != NULL){
+        //cycle is present
+        if(visited[temp]==true){
+            return true;
+        }
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+    return false;
 }
 
 int main()

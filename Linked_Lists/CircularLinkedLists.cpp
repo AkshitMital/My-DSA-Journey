@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node
@@ -74,7 +75,8 @@ void DeleteNode(Node* &tail, int value)
     }
 }
 
-void printNode(Node* &tail){
+void printNode(Node* &tail)
+{
     Node* temp = tail;
     if(tail == NULL){
         cout<<"List is empty"<<endl;
@@ -88,25 +90,46 @@ void printNode(Node* &tail){
     cout<<endl;
 }
 
+bool detectLoop(Node* head)
+{
+    if (head == NULL){
+        return false;
+    }
+
+    map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while(temp != NULL){
+        //cycle is present
+        if(visited[temp]==true){
+            return true;
+        }
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+    return false;
+}
+
 int main()
 {
-    // Node* node1 = new Node(30);
-    // Node* tail = node1;
+    Node* node1 = new Node(30);
+    Node* tail = node1;
     // printNode(tail);
 
-    Node* tail = NULL;
+    //Node* tail = NULL;
     InsertNode(tail,5,10);
-    // printNode(tail);
-    // InsertNode(tail,10,20);
-    // printNode(tail);
-    // InsertNode(tail,20,40);
-    // printNode(tail);
-    // InsertNode(tail,20,30);
-    // printNode(tail);
-    // InsertNode(tail,40,60);
-    // printNode(tail);
-    // InsertNode(tail,40,50);
-    // printNode(tail);
+    printNode(tail);
+    InsertNode(tail,10,20);
+    printNode(tail);
+    InsertNode(tail,20,40);
+    printNode(tail);
+    InsertNode(tail,20,30);
+    printNode(tail);
+    InsertNode(tail,40,60);
+    printNode(tail);
+    InsertNode(tail,40,50);
+    printNode(tail);
 
     DeleteNode(tail,10);
     printNode(tail);
