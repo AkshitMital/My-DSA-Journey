@@ -119,6 +119,7 @@ bool detectLoop(Node* head)
     while(temp != NULL){
         //cycle is present
         if(visited[temp]==true){
+            cout<<"Cycle present on element: "<<temp -> val<<endl;
             return true;
         }
         visited[temp] = true;
