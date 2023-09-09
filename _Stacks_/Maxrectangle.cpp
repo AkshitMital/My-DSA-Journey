@@ -59,7 +59,7 @@ int largestRectangleArea(int* heights, int n) {
         if(next[i] == -1) {
             next[i] = n;
         }
-         int b = next[i] - prev[i] - 1;
+        int b = next[i] - prev[i] - 1;
         int newArea = l*b;
         area = max(area, newArea);
     }
