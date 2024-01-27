@@ -96,6 +96,33 @@ void levelOrderTraversal(node* root)
     }
 }
 
+vector<vector <int>> levelOrder(node* root)
+{
+    vector<vector <int>> ans;
+    if(root == NULL){
+        return ans;
+    }
+    queue<node*> q;
+    q.push(root);
+    while(!q.empty()){
+        vector<int> level;
+        int levelSize = q.size();
+        for(int i=0; i<levelSize;i++){
+            node* binary = q.front();
+            q.pop();
+            if(binary->left!=NULL){
+                q.push(binary->left);
+            }
+            if(binary->right != NULL){
+                q.push(binary->right);
+            }
+            level.push_back(binary->data);
+        }
+        ans.push_back(level);
+    }
+    return ans;
+}
+
 void inorderTraversal(node* root)
 {
     //base case
