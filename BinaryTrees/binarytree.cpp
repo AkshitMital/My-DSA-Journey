@@ -96,9 +96,9 @@ void levelOrderTraversal(node* root)
     }
 }
 
-vector<vector <int>> levelOrder(node* root)
+vector<vector <int> > levelOrder(node* root)
 {
-    vector<vector <int>> ans;
+    vector<vector <int> > ans;
     if(root == NULL){
         return ans;
     }
